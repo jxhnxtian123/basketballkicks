@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css"%}">
+    <title>BASKETBALL KICKS</title>
+</head>
+
+<style>
+
+    body{
+        background-image: url(https://i.ibb.co/8gqXppx/277835607-509685050762755-3890674542302719349-n.png)
+    }
+
+</style>
+
+<body>
+    <div>     
+        <h1>
+            <a class="home" href="{% url "index"%}"> Customer Information</a>
+            <a class="rules" href="{% url "products"%}"> Products</a>
+            <a class="history" href="{% url "records"%}"> Table</a></h1>
+    <h2> Edit Product and Order Transaction</h2>
+
+<form method="POST" action="">
+    {% csrf_token%} 
+<div>
+    <div>{{form.JcShoes}}</div>
+    <div>{{form.JcQuantity}}</div>
+    <div>{{form.JcColor}}</div>
+    <div>{{form.JcSize}}</div>
+    <div>{{form.Jcpayment}}</div>
+    <div>{{form.Jcdelivery}}</div>
+    <div>
+        <input type = "Submit" class="btn primary" ></input>
+    </div>
+</div>
+</body>
+</html>

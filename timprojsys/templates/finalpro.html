@@ -1,0 +1,125 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css"%}">
+    <title>BASKETBALL KICKS</title>
+</head>
+
+<style>
+
+    body{
+        background-image: url(https://i.ibb.co/8gqXppx/277835607-509685050762755-3890674542302719349-n.png)
+    }
+</style>
+
+<body>
+    <div>
+            
+    <h1>BASKETBALL KICKS
+        <a class="home" href="{% url "index"%}"> Customer Information</a>
+        <a class="rules" href="{% url "products"%}"> Products</a>
+        <a class="history" href="{% url "records"%}"> Table</a></h1>
+    <h2>Featured Products</h2>
+    <p>Shoes</p>
+    </div>   
+
+
+<form method="post" action = "/records/">
+    {% csrf_token %}
+<p class="text">
+            <a ><img class="Pics" src= "{% static "img/lebron 3.jpg"%}"></a>
+            <a ><img class="Pics"  src= "{% static "img/kobe 8.jpg"%}"></a>
+            <a ><img class="Pics"  src= "{% static "img/3zero.jpg"%}"></a>
+            <a ><img class="Pics"  src= "{% static "img/harden vol 5.jpg"%}"></a>
+            <a ><img class="Pics"  src= "{% static "img/pg 5.jpg"%}"></a>
+            <a ><img class="Pics"  src= "{% static "img/dame 8.jpg"%}"></a>
+            <a ><img class="Pics"  src= "{% static "img/cp3 12.png"%}"></a>
+        </img>
+            <br>
+            <p1 class="text1">Lebron 3 </p1>
+            <p1 class="text2">Kobe 8 </p1>
+            <p1 class="text3">Curry 3zero </p1>
+            <p1 class="text4">Harden vol 5 </p1>
+            <p1 class="text5">PG 5 </p1>
+            <p1 class="text6">DAME 8 </p1>
+            <p1 class="text7">CP3 12 </p1>
+            <br>
+
+<center>
+    <select name="shoes" style="width: 332px;" id="BuyerTopic" placeholder="Select Your Topic:" required >
+                <option value ="" disabled selected="">Shoes :</option>
+                <option value ="Lebron 3"> Lebron 3 </option>
+                <option value ="Kobe 8"> Kobe 8 </option>
+                <option value ="Curry 3zero"> Curry 3zero </option>
+                <option value ="Harden vol 5"> Harden vol 5 </option>
+                <option value ="PG 5"> PG 5 </option>
+                <option value="DAME 8"> DAME 8 </option>
+                <option value="CP3 12"> CP3 12 </option>
+
+    </select>
+</center>
+<center>
+    <select name="price" style="width: 332px;" id="BuyerTopic" placeholder="Select Your Topic:" required>
+                <option value ="" disabled selected="">Quantity and Price :</option>
+                <option value ="1.  -₱ 7,000">1.  -₱ 7,000</option>
+                <option value ="2.  -₱ 14,000">2.  -₱ 14,000</option>
+                <option value="3. -₱ 21,000">3. -₱ 21,000</option>
+                <option value="4. -₱ 28,000">4. -₱ 28,000</option>
+    </select>
+</center>
+
+<center>
+    <select name="color" style="width: 332px;" id="BuyerTopic" placeholder="Select Your Topic:" required>
+                <option value ="" disabled selected="">Color:</option>
+                <option value ="Black">Black</option>
+                <option value ="White">White</option>
+                <option value="Blue">Blue</option>
+    </select>
+</center>
+<center>
+    <select name="size" style="width: 332px;" id="BuyerTopic" placeholder="Select Your Topic:" required>
+                <option value ="" disabled selected="">Size:</option>
+                <option value ="8">8</option>
+                <option value ="9">9</option>
+                <option value="10">10</option>
+    </select>
+</center>
+<center>
+    <select name="payment" style="width: 332px;" id="BuyerTopic" placeholder="Select Your Topic:" required>
+                <option value ="" disabled selected="">Mode of payment:</option>
+                <option value ="Gcash">Gcash</option>
+                <option value ="Paymaya">Paymaya</option>
+                <option value="Cash on Delivery">Cash on Delivery</option>
+    </select>
+</center> 
+<center>
+    <select name="deliver" style="width: 332px;" id="BuyerTopic" placeholder="Select Your Topic:" required>
+                <option value ="" disabled selected="">Mode of shipping:</option>
+                <option value ="Lalamove">Lalamove</option>
+                <option value ="J&T Express">J&T Express</option>
+                <option value="JRS Express">JRS Express</option>
+    </select>
+</center>
+
+
+</fieldset>
+
+</body>
+</html>
+
+<center>
+    <br>
+    <input id="btnConfirm" type="submit" value="CHECKOUT"/>
+</center>
+
+    <br><br>
+
+    </table>
+</form>
+
+    </body>
+</html>

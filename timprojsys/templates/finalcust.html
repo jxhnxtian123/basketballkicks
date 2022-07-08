@@ -1,0 +1,59 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css"%}">
+    <title>BASKETBALL KICKS</title>
+</head>
+
+<style>
+
+    body{
+        background-image: url(https://i.ibb.co/8gqXppx/277835607-509685050762755-3890674542302719349-n.png)
+    }
+
+</style>
+
+<body>
+    <div>     
+        <h1>BASKETBALL KICKS
+            <a class="home" href="{% url "index"%}"> Customer Information</a>
+            <a class="rules" href="{% url "products"%}"> Products</a>
+            <a class="history" href="{% url "records"%}"> Table</a></h1>
+    <h2>Customer Information</h2>
+    <p>Please fill out the forms</p>
+    <p class="line">Basketballkicks is our number one choice for online shoe retailers since it offers a great overall experience and a wide selection of shoes at affordable pricing. The website itself is user-friendly, features superb product photography, and provides a wealth of helpful information on each product page.</p>
+    </div>
+<form method="post" action = "/products/">
+    {% csrf_token %}
+<center>
+    <input type="text" id="FirstName" name="fname" size="42" placeholder="First Name" required/>
+</center>
+<center>
+    <input type="text" id="LastName" name="lname" size="42" placeholder="Last Name" required/>
+</center>
+<center>
+    <input type="phone" id="ContactNumber" name="number" size="42" placeholder="Contact Number" required /> 
+</center>
+
+<center>
+    <input type="email" id="E-mailAddress" name="email" size="42" placeholder="E-mail Address" required /> 
+</center>
+
+<center>
+    <input type="text" id="Address" name="Address" size="42" placeholder="Address" required /> 
+</center>
+
+<center>
+    <br>
+    <input id="btnConfirm" type="submit" value="ENTER"/>
+</center>
+
+    </table>
+</form>
+
+    </body>
+</html>

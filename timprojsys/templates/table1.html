@@ -1,0 +1,118 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css"%}">
+    <title>BASKETBALL KICKS</title>
+</head>
+
+<style>
+
+    body{
+        background-image: url(https://i.ibb.co/8gqXppx/277835607-509685050762755-3890674542302719349-n.png)
+    }
+
+</style>
+
+<body>
+    <div>   
+    <h1>BASKETBALL KICKS
+
+        <a class="home" href="{% url "index"%}"> Customer Information</a>
+        <a class="rules" href="{% url "products"%}"> Products</a>
+        <a class="history" href="{% url "records"%}"> Table</a></h1>
+    <h2>Trasaction Orders</h2>
+
+    </div>   
+  
+
+      {% block content %}
+
+      <title>SWF-Records</title>
+      <style type="text/css">
+        table, th, td {
+        border-bottom: 1px solid #ddd;
+        }
+      </style>  
+
+
+       <center>
+      <table class="table" >
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Number</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th></th>
+          </tr>
+
+        </thead>
+
+          <tbody>
+            <tr>
+            {%for items in BuyerItems%}
+              <td>{{items.JcFName}}</td>
+              <td>{{items.JcLName}}</td>
+              <td>{{items.JcPhone}}</td>
+              <td>{{items.JcEmail}}</td>
+              <td>{{items.JcAddress}}</td>
+              <td>
+                <a type='button' href="{% url 'update' items.pk%}" > Edit</a> <a type='button' href="{% url 'cancel'  items.pk%}" > Cancel</a>
+              </td> 
+            </tr>
+            {%endfor%}
+          </tbody>
+        
+        </tbody>
+      </table>
+    </center>
+    <br>
+    <center>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Shoes</th>
+            <th>Quantity and Price</th>
+            <th>Color</th>
+            <th>Size</th>
+            <th>Mode of Payment</th>
+            <th>Mode of Delivery</th>
+            <th></th>
+          </tr>
+
+        </thead>
+
+          <tbody>
+            <tr>
+            {%for item in ProductItems %}
+              <td>{{item.JcShoes}}</td>
+              <td>{{item.JcQuantity}}</td>
+              <td>{{item.JcColor}}</td>
+              <td>{{item.JcSize}}</td>
+              <td>{{item.Jcpayment}}</td>
+              <td>{{item.Jcdelivery}}</td>
+              <td>
+                <a type='button' href="{% url 'update1' item.pk%}" > Edit</a> <a type='button' href="{% url 'cancel1'  item.pk%}" > Cancel</a>
+              </td> 
+            </tr>
+            {%endfor%}
+          </tbody>
+        
+        </tbody>
+      </table>
+      {% endblock %}
+    </center>
+      <br>
+    <br><br>
+
+
+    </form>
+
+    </body>
+</html>
